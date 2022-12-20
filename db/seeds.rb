@@ -33,7 +33,7 @@ end
 10.times do |i|
     Order.create!(
         first_name: Faker::Name.first_name,
-        username: Faker::Internet.username,
+        last_name: Faker::Internet.username,
         phone_number: Faker::Number.leading_zero_number(digits: 10),
         region: Faker::Address.state,
         city: Faker::Address.city,
