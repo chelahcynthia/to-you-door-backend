@@ -10,30 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2022_12_19_155909) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_20_161613) do
   create_table "customers", force: :cascade do |t|
-    t.string "full_name"
-    t.string "email"
-    t.string "user_name"
-    t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
+    t.text "username"
+    t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "meals", force: :cascade do |t|
-
-    t.string "name"
+    t.text "name"
+    t.text "description"
     t.integer "price"
     t.string "category"
-    t.string "img_url"
+    t.text "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.string "first_name"
-
     t.string "last_name"
     t.integer "phone_number"
     t.string "delivery_address"
@@ -43,7 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_155909) do
     t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "restaurant_meals", force: :cascade do |t|
@@ -55,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_155909) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-
+    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
