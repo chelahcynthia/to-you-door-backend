@@ -1,4 +1,5 @@
 require 'faker'
+Customer.destroy_all #(for a clean slate)
 
 puts '...Seeding data'
 
