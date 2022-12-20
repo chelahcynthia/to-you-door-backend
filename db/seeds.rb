@@ -30,6 +30,14 @@ end
   puts "Created #{Meal.count} meals"
 end
 
+6.times do |i|
+  Restaurant.create!(
+      name: Faker::Restaurant.name,
+      review: Faker::Restaurant.review
+  )
+puts "Created #{Restaurant.count} restaurants"
+end
+
 10.times do |i|
     Order.create!(
         first_name: Faker::Name.first_name,
@@ -38,20 +46,13 @@ end
         region: Faker::Address.state,
         city: Faker::Address.city,
         delivery_address: Faker::Address.full_address,
-        restaurant_id: 1,
-        customer_id: 1, 
-        ordered_on: 1.week.ago
+        restaurant_id: rand(1..6),
+        customer_id: rand(1..5)
     )
   puts "Created #{Order.count} orders"
 end
 
-6.times do |i|
-    Restaurant.create!(
-        name: Faker::Restaurant.name,
-        review: Faker::Restaurant.review
-    )
-  puts "Created #{Restaurant.count} restaurants"
-end
+
 
 RestaurantMeal.create(meal_id: 1, restaurant_id: 1)
 RestaurantMeal.create(meal_id: 2, restaurant_id: 2)
