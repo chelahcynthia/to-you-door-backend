@@ -1,3 +1,7 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :username, :phone_number, :region, :city, :delivery_address, :restaurant_id, :customer_id
+
+  attributes :id, :first_name, :last_name, :phone_number, :delivery_address, :region, :city, :restaurant_id, :customer_id
+
+  belongs_to :restaurant
+  belongs_to :customer
 end

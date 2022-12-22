@@ -1,3 +1,5 @@
 class RestaurantMeal < ApplicationRecord
-    #dependent destroy on restaurants' deletion
+
+    belongs_to :restaurant
+    belongs_to :meal
 end

@@ -1,3 +1,5 @@
 class Order < ApplicationRecord
-    #dependent destroy on customers' deletion
+
+    belongs_to :restaurant
+    belongs_to :customer
 end
