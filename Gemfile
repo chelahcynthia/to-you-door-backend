@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.4"
+ruby "2.7.4"
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', "~> 0.10.12"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
@@ -21,7 +21,7 @@ gem "puma", "~> 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -33,7 +33,5 @@ group :development do
   # gem "spring"
 end
 
-gem 'active_model_serializers'
-
-gem 'bcrypt'
+gem "jwt", "~> 2.2"
 
