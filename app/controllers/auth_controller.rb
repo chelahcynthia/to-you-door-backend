@@ -8,7 +8,7 @@ class AuthController < ApplicationController
             token = encode_token({ cutomer_id: customer.id })
             render json: { customer: CustomerSerializer.new(customer), jwt: token }, status: :accepted
         else
-            render json: { message: 'Invalid username or password' }, status: :unauthorized
+            render json: { error: 'Invalid username or password' }, status: :unauthorized
         end
     end
 end

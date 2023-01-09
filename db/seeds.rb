@@ -7,17 +7,20 @@ RestaurantMeal.destroy_all
 
 puts '...Seeding data'
 
-5.times do |i|
-    Customer.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        username: Faker::Internet.username,
-        email: Faker::Internet.email,
-        password: "hello",
-        password_confirmation: "hello"
-    )
-  puts "Created #{Customer.count} customers"
-end
+Customer.create!( first_name: "Cynthia", last_name: "Chelah", username: "chelah", email: "chelah@gmail.com", password:"hello", password_confirmation: "hello" )
+puts "Created #{Customer.count} customers"
+
+# 5.times do |i|
+#     Customer.create!(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         username: Faker::Internet.username,
+#         email: Faker::Internet.email,
+#         password: "hello",
+#         password_confirmation: "hello"
+#     )
+#   puts "Created #{Customer.count} customers"
+# end
 
 10.times do |i|
     Meal.create!(
