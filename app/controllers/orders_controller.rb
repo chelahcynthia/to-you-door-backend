@@ -15,7 +15,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     private
 
     def order_params
-        params.permit(:first_name, :username, :phone_number, :delivery_address, :restaurant_id, :customer_id)
+        params.permit(:first_name, :last_name, :phone_number, :delivery_address, :restaurant_id, :customer_id)
     end
 
     def render_unprocessable_entity_response (invalid)
