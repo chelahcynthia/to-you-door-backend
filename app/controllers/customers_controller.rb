@@ -1,11 +1,13 @@
 class CustomersController < ApplicationController
 
+    skip_before_action :authorized, only: [:create]
+
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def show #show with orders on the profile page
-        customer = Customer.find(params[:id])
-        render json: customer
+        user = Customer.find(params[:id])
+        render json: user
     end
 
     def create
@@ -15,8 +17,17 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def update
         customer = Customer.find(params[:id])
-        customer.update!(customer_params)
+        customer.update!(customer_update_params)
         render json: customer, status: :accepted
+    end
+
+    def index
+        user = Customer.find_by(current_user)
+        if user 
+            render json: user
+        else
+            render json: {error: "Not authorized"}, status: :unauthorized
+        end
     end
 
     def destroy
@@ -33,6 +44,14 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def render_not_found_response
         render json: { error: "Customer not found" }, status: :not_found
+    end
+
+    def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :customer_id
+    end
+
+    def customer_update_params 
+      params.permit(:username, :email) 
     end
 
     def render_unprocessable_entity_response (invalid)
