@@ -10,18 +10,6 @@ puts '...Seeding data'
 Customer.create!( first_name: "Cynthia", last_name: "Chelah", username: "chelah", email: "chelah@gmail.com", password:"hello", password_confirmation: "hello" )
 puts "Created #{Customer.count} customers"
 
-# 5.times do |i|
-#     Customer.create!(
-#         first_name: Faker::Name.first_name,
-#         last_name: Faker::Name.last_name,
-#         username: Faker::Internet.username,
-#         email: Faker::Internet.email,
-#         password: "hello",
-#         password_confirmation: "hello"
-#     )
-#   puts "Created #{Customer.count} customers"
-# end
-
 10.times do |i|
     Meal.create!(
         name: Faker::Food.dish,
@@ -41,21 +29,9 @@ end
 puts "Created #{Restaurant.count} restaurants"
 end
 
-10.times do |i|
-    Order.create!(
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Internet.username,
-        phone_number: Faker::Number.leading_zero_number(digits: 10),
-        region: Faker::Address.state,
-        city: Faker::Address.city,
-        delivery_address: Faker::Address.full_address,
-        restaurant_id: rand(1..6),
-        customer_id: rand(1..5)
-    )
-  puts "Created #{Order.count} orders"
-end
+Order.create!( first_name: "Cynthia", last_name: "Chelah", phone_number: 0706123456, region: "Upperhill", city: "Nairobi", delivery_address: "Britam", restaurant_id: 1, customer_id: 1)
 
-
+puts "Created #{Order.count} orders"
 
 RestaurantMeal.create(meal_id: 1, restaurant_id: 1)
 RestaurantMeal.create(meal_id: 2, restaurant_id: 2)
