@@ -12,7 +12,13 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def create
         customer = Customer.create!(customer_params)
-        render json: customer, status: :created
+        if customer 
+            token = encode_token({ cutomer_id: customer.id })
+            render json: { customer: CustomerSerializer.new(customer), jwt: token }, status: :accepted
+        else
+            render json: { error: 'Invalid username or password' }, status: :unauthorized
+        end
+      
     end
 
     def update
