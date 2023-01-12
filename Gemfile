@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby "3.0.4"
 
 gem 'active_model_serializers', "~> 0.10.13"
 
@@ -40,3 +40,4 @@ end
 
 gem "jwt", "~> 2.5"
 
+gem "excon"

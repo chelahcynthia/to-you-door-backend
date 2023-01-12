@@ -93,6 +93,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.11.0)
+    excon (0.97.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -191,6 +192,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   debug
+  excon
   faker!
   jwt (~> 2.5)
   listen (~> 3.3)
@@ -202,7 +204,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.0.4p208
 
 BUNDLED WITH
    2.3.24
