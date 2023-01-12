@@ -4,10 +4,13 @@ require "json"
 require_relative "./mpesa_time"
 require_relative "./auth"
 
+#important variables such as pass_key and pass_secret should not be stored in variables as I have done
+
 t = mpesa_time
 pass_key = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
 paybill = 174379
 
+#this should be the clients phone number
 phone = 254794988885
 
 data = {
