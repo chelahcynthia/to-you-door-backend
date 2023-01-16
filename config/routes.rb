@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :customers, only: [:index, :show, :update, :destroy]
   resources :restaurants, only: [:index, :show, :destroy]
   resources :sessions, only: [:create, :destroy]
-  post 'login', to: 'auth#create'
-  post 'signup', to: 'customers#create'
+  post '/login', to: 'auth#create'
+  post '/signup', to: 'customers#create'
 end

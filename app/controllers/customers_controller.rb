@@ -1,24 +1,23 @@
 class CustomersController < ApplicationController
 
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :index]
 
-rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def show #show with orders on the profile page
-        user = Customer.find(params[:id])
-        render json: user
+        customer = Customer.find(params[:id])
+        render json: customer
     end
 
     def create
         customer = Customer.create!(customer_params)
         if customer 
             token = encode_token({ cutomer_id: customer.id })
-            render json: { customer: CustomerSerializer.new(customer), jwt: token }, status: :accepted
+            render json: { customer: CustomerSerializer.new(customer), token: token }, status: :accepted
         else
             render json: { error: 'Invalid username or password' }, status: :unauthorized
         end
-      
     end
 
     def update
@@ -28,12 +27,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     end
 
     def index
-        user = Customer.find_by(current_user)
-        if user 
-            render json: user
-        else
-            render json: {error: "Not authorized"}, status: :unauthorized
-        end
+        customers = Customer.all
+        render json: customers
     end
 
     def destroy
@@ -45,15 +40,11 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     private
 
     def customer_params
-        params.permit(:username, :email, :password, :password_confirmation)
+        params.permit( :username, :first_name, :last_name, :email, :password, :password_confirmation)
     end
 
     def render_not_found_response
         render json: { error: "Customer not found" }, status: :not_found
-    end
-
-    def authorize
-        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :customer_id
     end
 
     def customer_update_params 
