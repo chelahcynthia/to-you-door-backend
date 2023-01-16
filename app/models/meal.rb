@@ -2,6 +2,7 @@ class Meal < ApplicationRecord
 
     has_many :restaurant_meals
     has_many :restaurants, through: :restaurant_meals
+    has_many :carts
 
     validates :name, presence: true
     validates :price, presence: true

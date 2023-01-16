@@ -11,9 +11,6 @@ puts '...Seeding data'
 Customer.create!( first_name: "Cynthia", last_name: "Chelah", username: "chelah", email: "chelah@gmail.com", password:"hello", password_confirmation: "hello" )
 puts "Created #{Customer.count} customers"
 
-Cart.create! ( customer_id: 1;, meal_id: 1, price: 56000)
-puts "Created #{Cart.count} carts"
-
 10.times do |i|
     Meal.create!(
         name: Faker::Food.dish,
@@ -24,6 +21,9 @@ puts "Created #{Cart.count} carts"
     )
   puts "Created #{Meal.count} meals"
 end
+
+Cart.create!( customer_id: 1, meal_id: 1, price: 56000 )
+puts "Created #{Cart.count} carts"
 
 6.times do |i|
   Restaurant.create!(
