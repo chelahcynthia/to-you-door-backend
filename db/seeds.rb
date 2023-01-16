@@ -4,6 +4,7 @@ Meal.destroy_all
 Order.destroy_all
 Restaurant.destroy_all
 RestaurantMeal.destroy_all
+Cart.destroy_all
 
 puts '...Seeding data'
 
