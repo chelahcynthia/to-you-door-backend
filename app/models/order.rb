@@ -6,7 +6,7 @@ class Order < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :phone_number, presence: true
-    validates :phone_number, length: { is: 10 }
+    validates :phone_number, length: { is: 9 }
     validates :delivery_address, presence: true
     validates :region, presence: true
     validates :city, presence: true

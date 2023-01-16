@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_023829) do
     t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"                  
+    t.string "password_digest"
   end
 
   create_table "meals", force: :cascade do |t|
