@@ -14,7 +14,7 @@ puts "Created #{Customer.count} customers"
     Meal.create!(
         name: Faker::Food.dish,
         description: Faker::Food.description,
-        price: Faker::Number.binary(digits: 4),
+        price: Faker::Commerce.price,
         category: Faker::Food.dish,
         img_url: "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528"
     )
