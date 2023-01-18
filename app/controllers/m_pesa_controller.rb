@@ -2,7 +2,6 @@ require_relative './mpesa/mpesa_express.rb'
 
 class MPesaController < ApplicationController
 
-    skip_before_action :authorized, only:[:create]
     def create
         @phone_number = params[:phone_number]
         @amount = params[:amount]
