@@ -12,16 +12,16 @@ Customer.create!( first_name: "Stewie", last_name: "Griffin", username: "stewie"
 Customer.create!( first_name: "Megg", last_name: "Griffin", username: "meg", email: "megg@gmail.com", password:"hello", password_confirmation: "hello" )
 puts "Created customers"
 
-Meal.create!(name: "Meatloaf", description: Faker::Food.description, price: 420, category: Faker::Food.ethnic_category, img_url: "https://b1415357.smushcdn.com/1415357/wp-content/uploads/2020/04/meals-for-dinner-1.jpg?lossy=0&strip=1&webp=1" )
-Meal.create!(name: "Tacos", description: Faker::Food.description, price: 300, category: Faker::Food.ethnic_category, img_url: "https://images.pexels.com/photos/9095726/pexels-photo-9095726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" )
-Meal.create!(name: "Spaghetti and meatballs", description: Faker::Food.description, price: 299, category: Faker::Food.ethnic_category, img_url: "https://b1415357.smushcdn.com/1415357/wp-content/uploads/2020/04/meals-for-dinner-3.jpg?lossy=0&strip=1&webp=1" )
-Meal.create!(name: "Fajitas", description: Faker::Food.description, price: 499, category: Faker::Food.ethnic_category, img_url: "https://b1415357.smushcdn.com/1415357/wp-content/uploads/2020/04/dinner-list-1.jpg?lossy=0&strip=1&webp=1" )
-Meal.create!(name: "Barbecue ribs", description: Faker::Food.description, price: 389, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/cd6cd523-06a3-4e51-864a-eeff68fae1b5.jpg" )
-Meal.create!(name: "Cheese curds", description: Faker::Food.description, price: 320, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/f9ad5476-90e5-4009-ba01-418ea57b5ed7.jpg" )
-Meal.create!(name: "General T'so chicken", description: Faker::Food.description, price: 400, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/3d5be4bd-89c7-407d-938e-afdf997df549.jpg" )
-Meal.create!(name: "Hamburger", description: Faker::Food.description, price: 415, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/26c8009d-85df-48eb-80ba-2e0977a4044d.jpg" )
-Meal.create!(name: "Chicken nuggets", description: Faker::Food.description, price: 380, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/613f6d7e-2c1b-4524-843c-bd80f1afe108.jpg" )
-Meal.create!(name: "Waffles", description: Faker::Food.description, price: 459, category: Faker::Food.ethnic_category, img_url: "https://www.listchallenges.com/f/items/f9ca465b-1055-4411-b71d-a45a997876e8.jpg" )
+Meal.create!(name: "Meatloaf", description: Faker::Food.description, price: 420, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674136955/pexels-valeria-boltneva-1860205_m1dm8s.jpg" )
+Meal.create!(name: "Tacos", description: Faker::Food.description, price: 300, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674136995/pexels-roman-odintsov-4958520_whazf8.jpg" )
+Meal.create!(name: "Spaghetti and meatballs", description: Faker::Food.description, price: 299, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674136976/pexels-monica-turlui-7218637_cdzhbd.jpg" )
+Meal.create!(name: "Croissants", description: Faker::Food.description, price: 499, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674137960/pexels-polina-tankilevitch-4109384_qpqdam.jpg" )
+Meal.create!(name: "Barbecue ribs", description: Faker::Food.description, price: 389, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674138162/pexels-nerfee-mirandilla-3186654_zdaxq2.jpg" )
+Meal.create!(name: "Pizza", description: Faker::Food.description, price: 320, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674138393/pexels-cottonbro-studio-3944308_xyyjo5.jpg" )
+Meal.create!(name: "General T'so chicken", description: Faker::Food.description, price: 400, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674137728/pexels-ren%C3%A9-roa-12261069_fjn4nt.jpg" )
+Meal.create!(name: "Hamburger", description: Faker::Food.description, price: 415, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1673955714/burger2_tquun2.jpg" )
+Meal.create!(name: "Chicken nuggets", description: Faker::Food.description, price: 380, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674137827/pexels-roger-cziwerny-792024_rw9rzo.jpg" )
+Meal.create!(name: "Waffles", description: Faker::Food.description, price: 459, category: Faker::Food.ethnic_category, img_url: "https://res.cloudinary.com/dphlf7a8o/image/upload/v1674137987/pexels-viktoria-alipatova-2074108_b5wczy.jpg" )
 puts "Created meals"
 
 
